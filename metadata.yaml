@@ -1,5 +1,5 @@
 homepage: https://stape.io/
 documentation: https://github.com/stape-io/cordial-tag
 versions:
-  - sha: <INITIAL-RELEASE-COMMIT>
+  - sha: 334796ad378042d8f7469c33f35081b52baee32f
     changeNotes: Initial release.
