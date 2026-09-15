@@ -1,5 +1,7 @@
 homepage: https://stape.io/
 documentation: https://github.com/stape-io/cordial-tag
 versions:
+  - sha: 4a1aaa4b5b4fca24c96d29e916f5b220e34fa05f
+    changeNotes: Fix Orders/Contacts payloads, add Automap from Event Data, and decouple cookie read/write so only Page View writes attribution cookies.
   - sha: 18d8952e873a80cf14e2f5e6af87f9603a8bb062
     changeNotes: Initial release.

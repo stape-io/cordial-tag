@@ -1,3 +1,4 @@
+const computeEffectiveTldPlusOne = require('computeEffectiveTldPlusOne');
 const encodeUriComponent = require('encodeUriComponent');
 const getAllEventData = require('getAllEventData');
 const getCookieValues = require('getCookieValues');
@@ -14,6 +15,7 @@ const Math = require('Math');
 const parseUrl = require('parseUrl');
 const sendHttpRequest = require('sendHttpRequest');
 const setCookie = require('setCookie');
+const toBase64 = require('toBase64');
 
 /*==============================================================================
 ==============================================================================*/
@@ -64,15 +66,7 @@ function getAttributionParam(paramName, cookieName, overrideValue) {
 
   const url = getUrl(eventData);
   const param = getQueryParam(url, paramName);
-  if (param) {
-    setCookie(cookieName, param, {
-      domain: 'auto',
-      path: '/',
-      secure: true,
-      'max-age': 60 * 60 * 24 // 24 hours
-    });
-    return param;
-  }
+  if (param) return param;
 
   const cookieValue = getCookieValues(cookieName)[0];
   if (cookieValue) return cookieValue;
@@ -80,41 +74,58 @@ function getAttributionParam(paramName, cookieName, overrideValue) {
   return undefined;
 }
 
+function setAttributionCookie(paramName, cookieName) {
+  const url = getUrl(eventData);
+  const param = getQueryParam(url, paramName);
+  if (!param) return;
+
+  setCookie(cookieName, param, {
+    domain: getCookieDomain(data, eventData),
+    path: '/',
+    secure: true,
+    httpOnly: !!data.cookieHttpOnly,
+    'max-age': 60 * 60 * 24 * (makeInteger(data.cookieExpiration) || 90)
+  });
+}
+
 function cacheAttributionIds() {
-  getAttributionParam('mcID', 'cordial_mcID');
-  getAttributionParam('linkID', 'cordial_linkID');
+  setAttributionCookie('mcID', 'cordial_mcID');
+  setAttributionCookie('linkID', 'cordial_linkID');
 }
 
 function createContact(eventData) {
+  const autoMap = data.autoMapEventData;
   const eventDataUserData = eventData.user_data || {};
   const email =
-    data.address || eventData.email || eventDataUserData.email || eventDataUserData.email_address;
+    data.address ||
+    (autoMap
+      ? eventData.email || eventDataUserData.email || eventDataUserData.email_address
+      : undefined);
 
-  if (!isValidValue(email)) {
-    log({
-      Name: 'Cordial',
-      Type: 'Message',
-      Message: '🛑 [ERROR] Contact was not created.',
-      Reason: 'Missing required parameter: "address".'
-    });
-    data.gtmOnFailure();
-    return true;
-  }
+  if (!requireValue(email, 'address', '🛑 [ERROR] Contact was not created.')) return true;
 
   const contactData = mapContactData();
-  contactData.channels = { email: { address: makeString(email) } };
+  contactData.channels = contactData.channels || {};
+  contactData.channels.email = contactData.channels.email || {};
+  contactData.channels.email.address = makeString(email);
 
   sendRequest('POST', 'contacts', contactData);
   return false;
 }
 
 function updateContact() {
-  const identifier = getContactIdentifier();
-  if (!identifier) {
-    data.gtmOnFailure();
+  if (data.useSecondaryIdentifier) {
+    if (
+      !requireValue(data.secondaryKeyName, 'secondaryKeyName', '🛑 [ERROR] Contact was not updated.') ||
+      !requireValue(data.secondaryKeyValue, 'secondaryKeyValue', '🛑 [ERROR] Contact was not updated.')
+    ) {
+      return true;
+    }
+  } else if (!requireValue(data.primaryKey, 'primaryKey', '🛑 [ERROR] Contact was not updated.')) {
     return true;
   }
 
+  const identifier = getContactIdentifier();
   const contactData = mapContactData();
 
   sendRequest('PUT', 'contacts/' + identifier, contactData);
@@ -123,28 +134,9 @@ function updateContact() {
 
 function getContactIdentifier() {
   if (data.useSecondaryIdentifier) {
-    if (!isValidValue(data.secondaryKeyName) || !isValidValue(data.secondaryKeyValue)) {
-      log({
-        Name: 'Cordial',
-        Type: 'Message',
-        Message: '🛑 [ERROR] Contact was not updated.',
-        Reason: 'Missing required parameters: "secondaryKeyName" and/or "secondaryKeyValue".'
-      });
-      return undefined;
-    }
     return (
       encodeUriComponent(data.secondaryKeyName) + ':' + encodeUriComponent(data.secondaryKeyValue)
     );
-  }
-
-  if (!isValidValue(data.primaryKey)) {
-    log({
-      Name: 'Cordial',
-      Type: 'Message',
-      Message: '🛑 [ERROR] Contact was not updated.',
-      Reason: 'Missing required parameter: "primaryKey".'
-    });
-    return undefined;
   }
 
   const parts = makeString(data.primaryKey).split(':');
@@ -157,16 +149,41 @@ function getContactIdentifier() {
 
 function mapContactData() {
   const contactData = {};
+  const emailChannel = {};
+
   if (data.createContactParameters && data.createContactParameters.length) {
     const fields = makeTableMap(data.createContactParameters, 'key', 'value');
     for (let key in fields) {
-      contactData[key] = coerceContactFieldValue(fields[key]);
+      if (key === 'subscribeStatus') {
+        emailChannel.subscribeStatus = fields[key];
+      } else if (key === 'invalid') {
+        emailChannel.invalid = coerceBooleanValue(fields[key]);
+      } else if (key === 'address') {
+        emailChannel.address = makeString(fields[key]);
+      } else if (key === 'identifyBy') {
+        if (data.eventType === 'createContact') {
+          contactData.identifyBy = fields[key]
+            .split(',')
+            .map((secondaryKey) => secondaryKey.trim())
+            .filter(isValidValue);
+        }
+      } else {
+        contactData[key] = coerceBooleanValue(fields[key]);
+      }
     }
   }
+
+  let hasEmailChannelFields = false;
+  for (let key in emailChannel) {
+    hasEmailChannelFields = true;
+    break;
+  }
+  if (hasEmailChannelFields) contactData.channels = { email: emailChannel };
+
   return contactData;
 }
 
-function coerceContactFieldValue(value) {
+function coerceBooleanValue(value) {
   if (value === 'true' || value === true) return true;
   if (value === 'false' || value === false) return false;
   return value;
@@ -175,25 +192,17 @@ function coerceContactFieldValue(value) {
 function trackOrder(eventData) {
   const mappedOrderData = mapOrderData(eventData);
 
-  if (!isValidValue(mappedOrderData.orderID)) {
-    log({
-      Name: 'Cordial',
-      Type: 'Message',
-      Message: '🛑 [ERROR] Order was not sent.',
-      Reason: 'Missing required parameter: "orderId".'
-    });
-    data.gtmOnFailure();
+  if (!requireValue(mappedOrderData.orderID, 'orderId', '🛑 [ERROR] Order was not sent.')) {
     return true;
   }
 
-  if (!isValidValue(mappedOrderData.email) && !isValidValue(mappedOrderData.cID)) {
-    log({
-      Name: 'Cordial',
-      Type: 'Message',
-      Message: '🛑 [ERROR] Order was not sent.',
-      Reason: 'Missing required identifier: "email" or "cID".'
-    });
-    data.gtmOnFailure();
+  if (
+    !requireOneOf(
+      [mappedOrderData.email, mappedOrderData.cID],
+      '"email" or "cID"',
+      '🛑 [ERROR] Order was not sent.'
+    )
+  ) {
     return true;
   }
 
@@ -202,56 +211,98 @@ function trackOrder(eventData) {
 }
 
 function mapOrderData(eventData) {
-  const orderId = data.orderId || eventData.transaction_id;
+  const autoMap = data.autoMapEventData;
+  const orderId = data.orderId || (autoMap ? eventData.transaction_id : undefined);
   const mcID = getAttributionParam('mcID', 'cordial_mcID', getMappedOrderProperty('mcId'));
   const linkID = getAttributionParam('linkID', 'cordial_linkID', getMappedOrderProperty('linkId'));
   const msID = getMappedOrderProperty('msId');
+  const eventDataUserData = eventData.user_data || {};
   const mappedData = {};
 
   if (orderId) mappedData.orderID = makeString(orderId);
 
-  if (data.purchaseDate) {
-    mappedData.purchaseDate = makeString(data.purchaseDate);
-  } else {
-    mappedData.purchaseDate = convertTimestampToISO(getTimestampMillis());
-  }
+  mappedData.purchaseDate = data.purchaseDate
+    ? makeString(data.purchaseDate)
+    : convertTimestampToISO(getTimestampMillis());
 
-  const eventDataUserData = eventData.user_data || {};
-  if (isValidValue(data.email)) mappedData.email = data.email;
-  else if (eventData.email) mappedData.email = eventData.email;
-  else if (eventDataUserData.email) mappedData.email = eventDataUserData.email;
-  else if (eventDataUserData.email_address) mappedData.email = eventDataUserData.email_address;
+  const email =
+    data.email ||
+    (autoMap
+      ? eventData.email || eventDataUserData.email || eventDataUserData.email_address
+      : undefined);
+  if (isValidValue(email)) mappedData.email = email;
 
   if (isValidValue(data.cid)) mappedData.cID = data.cid;
 
-  const customerID = getMappedOrderProperty('clientId');
+  const customerID = getMappedOrderProperty('clientId') || (autoMap ? eventData.user_id : undefined);
   if (customerID) mappedData.customerID = makeString(customerID);
-  else if (eventData.user_id) mappedData.customerID = makeString(eventData.user_id);
-  else if (eventData.client_id) mappedData.customerID = makeString(eventData.client_id);
 
   if (mcID) mappedData.mcID = makeString(mcID);
   if (linkID) mappedData.linkID = makeString(linkID);
   if (msID) mappedData.msID = makeString(msID);
 
-  const totalAmount = getMappedOrderProperty('totalAmount');
-  if (totalAmount) mappedData.totalAmount = makeNumber(totalAmount);
-  else if (eventData.value) mappedData.totalAmount = makeNumber(eventData.value);
+  const storeID = getMappedOrderProperty('storeId');
+  if (storeID) mappedData.storeID = makeString(storeID);
+
+  const status = getMappedOrderProperty('status');
+  if (status) mappedData.status = makeString(status);
+
+  const suppressTriggers = getMappedOrderProperty('suppressTriggers');
+  if (suppressTriggers) mappedData.suppressTriggers = coerceBooleanValue(suppressTriggers);
+
+  const discountAmount = getMappedOrderProperty('discountAmount');
+  if (discountAmount) {
+    mappedData.discountApplication = { type: 'fixed', amount: makeNumber(discountAmount) };
+  }
+
+  const totalAmount =
+    getMappedOrderProperty('totalAmount') || (autoMap ? eventData.value : undefined);
+  if (isValidValue(totalAmount)) mappedData.totalAmount = makeNumber(totalAmount);
 
   const tax = getMappedOrderProperty('tax');
   if (tax) mappedData.tax = makeNumber(tax);
 
-  const shippingCost = getMappedOrderProperty('shippingCost');
-  if (shippingCost) mappedData.shippingAndHandling = makeNumber(shippingCost);
-  else if (eventData.shipping) mappedData.shippingAndHandling = makeNumber(eventData.shipping);
+  const shippingCost =
+    getMappedOrderProperty('shippingCost') || (autoMap ? eventData.shipping : undefined);
+  if (isValidValue(shippingCost)) mappedData.shippingAndHandling = makeNumber(shippingCost);
+
+  const shippingAddress = mapAddress('shipping');
+  if (shippingAddress) mappedData.shippingAddress = shippingAddress;
+
+  const billingAddress = mapAddress('billing');
+  if (billingAddress) mappedData.billingAddress = billingAddress;
 
   if (data.orderCustomProperties && data.orderCustomProperties.length) {
-    const customProperties = makeTableMap(data.orderCustomProperties, 'key', 'value');
-    mappedData.properties = customProperties;
+    mappedData.properties = makeTableMap(data.orderCustomProperties, 'key', 'value');
   }
 
-  const items = getMappedOrderProperty('items') || eventData.items;
+  const items = getMappedOrderProperty('items') || (autoMap ? eventData.items : undefined);
   if (getType(items) === 'array') mappedData.items = formatItems(items);
   return mappedData;
+}
+
+function mapAddress(prefix) {
+  const suffixToField = {
+    Name: 'name',
+    AddressLine: 'address',
+    City: 'city',
+    State: 'state',
+    PostalCode: 'postalCode',
+    Country: 'country'
+  };
+
+  const address = {};
+  for (let suffix in suffixToField) {
+    const value = getMappedOrderProperty(prefix + suffix);
+    if (value) address[suffixToField[suffix]] = makeString(value);
+  }
+
+  let hasFields = false;
+  for (let key in address) {
+    hasFields = true;
+    break;
+  }
+  return hasFields ? address : undefined;
 }
 
 function formatItems(items) {
@@ -274,8 +325,18 @@ function formatItems(items) {
         formattedItem.qty = makeInteger(item[key]);
       } else if (key === 'itemPrice' || key === 'price') {
         formattedItem.itemPrice = makeNumber(item[key]);
+      } else if (key === 'salePrice') {
+        formattedItem.salePrice = makeNumber(item[key]);
       } else if (key === 'amount') {
         formattedItem.amount = makeNumber(item[key]);
+      } else if (key === 'productType') {
+        formattedItem.productType = makeString(item[key]);
+      } else if (key === 'manufacturerName') {
+        formattedItem.manufacturerName = makeString(item[key]);
+      } else if (key === 'UPCCode' || key === 'upc') {
+        formattedItem.UPCCode = makeString(item[key]);
+      } else if (key === 'inStock' || key === 'taxable' || key === 'enabled') {
+        formattedItem[key] = coerceBooleanValue(item[key]);
       } else if (key === 'description' || key === 'url' || key === 'images' || key === 'tags') {
         formattedItem[key] = item[key];
       } else {
@@ -283,11 +344,11 @@ function formatItems(items) {
       }
     }
 
-    if (!formattedItem.amount && formattedItem.qty && formattedItem.itemPrice) {
+    if (formattedItem.amount === undefined && formattedItem.qty && formattedItem.itemPrice) {
       formattedItem.amount = makeNumber(formattedItem.qty * formattedItem.itemPrice);
     }
 
-    if (!formattedItem.sku && formattedItem.productID) {
+    if (formattedItem.sku === undefined && formattedItem.productID) {
       formattedItem.sku = formattedItem.productID;
     }
 
@@ -310,31 +371,22 @@ function sendRequest(method, path, body) {
   return sendHttpRequest(
     url,
     (statusCode, headers, responseBody) => {
-      let parsedBody = {};
-      if (responseBody) parsedBody = JSON.parse(responseBody);
+      const parsedBody = JSON.parse(responseBody || '{}');
 
       if (!data.useOptimisticScenario) {
         if (statusCode >= 200 && statusCode < 400 && !parsedBody.errors) {
-          data.gtmOnSuccess();
+          return data.gtmOnSuccess();
         } else {
-          log({
-            Name: 'Cordial',
-            Type: 'Message',
-            Message: '🛑 [ERROR] API call failed.',
-            Status: statusCode,
-            Response: parsedBody
-          });
-          data.gtmOnFailure();
+          return data.gtmOnFailure();
         }
       }
     },
     {
       headers: {
-        Authorization: 'Basic ' + data.apiKey,
+        Authorization: 'Basic ' + toBase64(data.apiKey + ':'),
         'Content-Type': 'application/json'
       },
-      method: method,
-      timeout: 3500
+      method: method
     },
     JSON.stringify(body)
   );
@@ -420,9 +472,36 @@ function convertTimestampToISO(timestamp) {
   );
 }
 
+function requireValue(value, paramName, failMessage) {
+  if (isValidValue(value)) return true;
+  log({
+    Name: 'Cordial',
+    Type: 'Message',
+    Message: failMessage,
+    Reason: 'Missing required parameter: "' + paramName + '".'
+  });
+  data.gtmOnFailure();
+  return false;
+}
+
+function requireOneOf(values, identifierDescription, failMessage) {
+  for (let i = 0; i < values.length; i++) {
+    if (isValidValue(values[i])) return true;
+  }
+  log({
+    Name: 'Cordial',
+    Type: 'Message',
+    Message: failMessage,
+    Reason: 'Missing required identifier: ' + identifierDescription + '.'
+  });
+  data.gtmOnFailure();
+  return false;
+}
+
 function isValidValue(value) {
   const valueType = getType(value);
-  return valueType !== 'null' && valueType !== 'undefined' && value !== '' && value === value;
+  if (valueType === 'null' || valueType === 'undefined' || value !== value) return false;
+  return value !== '' && value !== 'undefined' && value !== 'null';
 }
 
 function isConsentGivenOrNotRequired(data, eventData) {
@@ -434,6 +513,12 @@ function isConsentGivenOrNotRequired(data, eventData) {
 
 function getUrl(eventData) {
   return eventData.page_location || getRequestHeader('referer') || eventData.page_referrer;
+}
+
+function getCookieDomain(data, eventData) {
+  return !data.cookieDomain || data.cookieDomain === 'auto'
+    ? computeEffectiveTldPlusOne(getUrl(eventData)) || 'auto'
+    : data.cookieDomain;
 }
 
 function shouldExitEarly(data, eventData) {
