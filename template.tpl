@@ -13,7 +13,7 @@ ___INFO___
   "id": "cvt_temp_public_id",
   "version": 1,
   "securityGroups": [],
-  "displayName": "Cordial Conversions API",
+  "displayName": "Cordial",
   "categories": [
     "ADVERTISING",
     "MARKETING",
@@ -24,7 +24,7 @@ ___INFO___
     "displayName": "stape.io",
     "thumbnail": "data:image/png;base64,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\u003d\u003d"
   },
-  "description": "Sends Order info to Cordial via Orders API. Includes a Page View option to capture URL attribution IDs (mcID, linkID, msID) and cache them in cookies.",
+  "description": "Sends Order, Create Contact and Update Contact events to Cordial\u0027s REST API. Includes a Page View option that captures in cookies the mcID and linkID attribution identifiers from the URL.",
   "containerContexts": [
     "SERVER"
   ]
@@ -37,8 +37,6 @@ ___TEMPLATE_PARAMETERS___
   {
     "type": "GROUP",
     "name": "configGroup",
-    "displayName": "",
-    "groupStyle": "NO_ZIPPY",
     "subParams": [
       {
         "type": "RADIO",
@@ -48,7 +46,7 @@ ___TEMPLATE_PARAMETERS___
           {
             "value": "pageview",
             "displayValue": "Page View",
-            "help": "Extracts mcID and linkID from the URL and stores them in cookies for later conversion events."
+            "help": "Extracts \u003ci\u003emcID\u003c/i\u003e and \u003ci\u003elinkID\u003c/i\u003e from the URL and stores them in cookies for later conversion events."
           },
           {
             "value": "order",
@@ -77,7 +75,7 @@ ___TEMPLATE_PARAMETERS___
           }
         ],
         "alwaysInSummary": true,
-        "help": "Your API Key for Cordial APIs usage. Keep in mind that the API key is bound to an static IP address at the moment of creation. This imposes a problem if your Server Side GTM is hosted under a dynamic IP. \u003c/br\u003e\nIf you use Stape to host your SGTM, use the \u003ca href\u003d\"https://stape.io/helpdesk/documentation/dedicated-ip-power-up\"\u003e dedicated outbound IP \u003c/a\u003e power up to make it work. \u003c/br\u003e\nIf you use another Server Side GTM hosting strategy you may need to contact your IT to manage this configuration.",
+        "help": "Your Cordial API key.\u003cbr/\u003e\n\u003cb\u003eImportant:\u003c/b\u003e Cordial requires you to allowlist the calling IP address(es) when you create the API key (see \u003ca href\u003d\"https://support.cordial.com/hc/en-us/articles/115005365087-API-keys\"\u003eAPI keys\u003c/a\u003e). This is a problem if your server-side GTM runs on a dynamic IP.\u003cbr/\u003e\nIf you use Stape to host your sGTM, add the \u003ca href\u003d\"https://stape.io/helpdesk/documentation/dedicated-ip-power-up\"\u003ededicated outbound IP\u003c/a\u003e power-up so the outbound IP stays static, then allowlist that IP.\u003cbr/\u003e\nOtherwise, ask whoever manages your server-side GTM hosting for its static outbound IP(s), or allowlist a CIDR range (e.g. \u003ci\u003e0.0.0.0/0\u003c/i\u003e to allow any IP — weakens the key\u0027s security).",
         "enablingConditions": [
           {
             "paramName": "eventType",
@@ -119,6 +117,88 @@ ___TEMPLATE_PARAMETERS___
             "type": "EQUALS"
           }
         ]
+      },
+      {
+        "type": "CHECKBOX",
+        "name": "autoMapEventData",
+        "checkboxText": "Automap from Event Data",
+        "simpleValueType": true,
+        "defaultValue": true,
+        "help": "When enabled (default), fields left empty automatically fall back to values from Event Data (\u003ci\u003etransaction_id\u003c/i\u003e, \u003ci\u003eemail\u003c/i\u003e, \u003ci\u003euser_id\u003c/i\u003e, \u003ci\u003evalue\u003c/i\u003e, \u003ci\u003eshipping\u003c/i\u003e, \u003ci\u003eitems\u003c/i\u003e, etc), as documented in each field\u0027s help text below. Disable to require every value to be set explicitly.",
+        "enablingConditions": [
+          {
+            "paramName": "eventType",
+            "paramValue": "order",
+            "type": "EQUALS"
+          },
+          {
+            "paramName": "eventType",
+            "paramValue": "createContact",
+            "type": "EQUALS"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "GROUP",
+    "name": "cookieSettingsGroup",
+    "displayName": "Cookie Settings",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "TEXT",
+        "name": "cookieExpiration",
+        "displayName": "Cookie Expiration",
+        "simpleValueType": true,
+        "help": "The number of days the \u003ci\u003emcID\u003c/i\u003e/\u003ci\u003elinkID\u003c/i\u003e attribution cookies will live.",
+        "valueUnit": "days",
+        "defaultValue": 90,
+        "valueHint": "90",
+        "valueValidators": [
+          {
+            "type": "NON_NEGATIVE_NUMBER"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "cookieDomain",
+        "displayName": "Cookie Domain",
+        "simpleValueType": true,
+        "help": "Overrides the cookie domain (defaults to \u003cb\u003eauto\u003c/b\u003e).\u003cbr/\u003e\nEnter your website\u0027s top-level domain as a fixed value (e.g. example.com).\u003cbr/\u003e\nIf left as \u003ci\u003eauto\u003c/i\u003e, the top-level domain is automatically computed from the page URL.",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "defaultValue": "auto",
+        "valueHint": "example.com"
+      },
+      {
+        "type": "SELECT",
+        "name": "cookieHttpOnly",
+        "displayName": "Http Only Flag",
+        "macrosInSelect": true,
+        "selectItems": [
+          {
+            "value": false,
+            "displayValue": "False"
+          },
+          {
+            "value": true,
+            "displayValue": "True"
+          }
+        ],
+        "simpleValueType": true,
+        "defaultValue": false
+      }
+    ],
+    "enablingConditions": [
+      {
+        "paramName": "eventType",
+        "paramValue": "pageview",
+        "type": "EQUALS"
       }
     ]
   },
@@ -138,7 +218,7 @@ ___TEMPLATE_PARAMETERS___
             "type": "NON_EMPTY"
           }
         ],
-        "help": "Required. The unique identifier for the order."
+        "help": "Required. The unique identifier for the order.\u003cbr/\u003e\u003cbr/\u003eFalls back to \u003ci\u003eeventData.transaction_id\u003c/i\u003e when left empty and \u003ci\u003eAutomap from Event Data\u003c/i\u003e is enabled."
       },
       {
         "type": "TEXT",
@@ -160,13 +240,13 @@ ___TEMPLATE_PARAMETERS___
         "name": "email",
         "displayName": "User email",
         "simpleValueType": true,
-        "help": "Unique secondary identifier for the user (user email as registered in your Cordial Contacts list). This must be set if \u003ci\u003eCordial User ID\u003c/i\u003e is not set.",
+        "help": "Unique secondary identifier for the user (user email as registered in your Cordial Contacts list). This must be set if \u003ci\u003eCordial User ID\u003c/i\u003e is not set.\u003cbr/\u003e\u003cbr/\u003eFalls back to \u003ci\u003eeventData.email\u003c/i\u003e, then \u003ci\u003eeventData.user_data.email\u003c/i\u003e, then \u003ci\u003eeventData.user_data.email_address\u003c/i\u003e, when left empty and \u003ci\u003eAutomap from Event Data\u003c/i\u003e is enabled.",
         "valueValidators": []
       },
       {
         "type": "SIMPLE_TABLE",
         "name": "orderProperties",
-        "displayName": "",
+        "displayName": "Order Properties",
         "simpleTableColumns": [
           {
             "defaultValue": "",
@@ -206,6 +286,70 @@ ___TEMPLATE_PARAMETERS___
               {
                 "value": "shippingCost",
                 "displayValue": "Shipping and Handling Cost"
+              },
+              {
+                "value": "discountAmount",
+                "displayValue": "Discount Amount (Fixed)"
+              },
+              {
+                "value": "storeId",
+                "displayValue": "Store ID"
+              },
+              {
+                "value": "status",
+                "displayValue": "Order Status"
+              },
+              {
+                "value": "suppressTriggers",
+                "displayValue": "Suppress Triggers"
+              },
+              {
+                "value": "shippingName",
+                "displayValue": "Shipping Address: Name"
+              },
+              {
+                "value": "shippingAddressLine",
+                "displayValue": "Shipping Address: Street"
+              },
+              {
+                "value": "shippingCity",
+                "displayValue": "Shipping Address: City"
+              },
+              {
+                "value": "shippingState",
+                "displayValue": "Shipping Address: State"
+              },
+              {
+                "value": "shippingPostalCode",
+                "displayValue": "Shipping Address: Postal Code"
+              },
+              {
+                "value": "shippingCountry",
+                "displayValue": "Shipping Address: Country"
+              },
+              {
+                "value": "billingName",
+                "displayValue": "Billing Address: Name"
+              },
+              {
+                "value": "billingAddressLine",
+                "displayValue": "Billing Address: Street"
+              },
+              {
+                "value": "billingCity",
+                "displayValue": "Billing Address: City"
+              },
+              {
+                "value": "billingState",
+                "displayValue": "Billing Address: State"
+              },
+              {
+                "value": "billingPostalCode",
+                "displayValue": "Billing Address: Postal Code"
+              },
+              {
+                "value": "billingCountry",
+                "displayValue": "Billing Address: Country"
               }
             ]
           },
@@ -222,7 +366,7 @@ ___TEMPLATE_PARAMETERS___
           }
         ],
         "newRowButtonText": "Add property",
-        "help": ""
+        "help": "Map additional Orders API fields not covered above.\u003cbr/\u003e\u003cbr/\u003eDefault mappings (only apply when left empty and \u003ci\u003eAutomap from Event Data\u003c/i\u003e is enabled; a value you set here always overrides these):\u003cul\u003e\u003cli\u003e\u003ci\u003eClient ID\u003c/i\u003e: \u003ci\u003eeventData.user_id\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eTotal Amount\u003c/i\u003e: \u003ci\u003eeventData.value\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eShipping and Handling Cost\u003c/i\u003e: \u003ci\u003eeventData.shipping\u003c/i\u003e\u003c/li\u003e\u003cli\u003e\u003ci\u003eItems\u003c/i\u003e: \u003ci\u003eeventData.items\u003c/i\u003e\u003c/li\u003e\u003c/ul\u003e\u003cb\u003eDiscount Amount (Fixed)\u003c/b\u003e is sent as \u003ci\u003ediscountApplication.amount\u003c/i\u003e with type \u003ci\u003efixed\u003c/i\u003e (the only type Cordial supports).\u003cbr/\u003e\nThe \u003cb\u003eShipping/Billing Address\u003c/b\u003e rows are merged into the matching \u003ci\u003eshippingAddress\u003c/i\u003e / \u003ci\u003ebillingAddress\u003c/i\u003e object.\u003cbr/\u003e\nSee the \u003ca href\u003d\"https://support.cordial.com/hc/en-us/articles/204570677-Orders-API#postOrders\"\u003eOrders API documentation\u003c/a\u003e for the full field reference."
       },
       {
         "type": "SIMPLE_TABLE",
@@ -257,8 +401,6 @@ ___TEMPLATE_PARAMETERS___
   {
     "type": "GROUP",
     "name": "contactsGroup",
-    "displayName": "",
-    "groupStyle": "NO_ZIPPY",
     "subParams": [
       {
         "type": "TEXT",
@@ -270,7 +412,7 @@ ___TEMPLATE_PARAMETERS___
             "type": "NON_EMPTY"
           }
         ],
-        "help": "Required for creating a contact.",
+        "help": "Required for creating a contact.\u003cbr/\u003e\u003cbr/\u003eFalls back to \u003ci\u003eeventData.email\u003c/i\u003e, then \u003ci\u003eeventData.user_data.email\u003c/i\u003e, then \u003ci\u003eeventData.user_data.email_address\u003c/i\u003e, when left empty and \u003ci\u003eAutomap from Event Data\u003c/i\u003e is enabled.",
         "enablingConditions": [
           {
             "paramName": "eventType",
@@ -284,7 +426,7 @@ ___TEMPLATE_PARAMETERS___
         "name": "primaryKey",
         "displayName": "Primary Identifier",
         "simpleValueType": true,
-        "help": "The primary key identifier of the contact. You can find what is the primary key of your contacts by accessing your contact list in Cordial UI.",
+        "help": "The primary key identifier of the contact. You can find what is the primary key of your contacts by accessing your contact list in Cordial UI.\u003cbr/\u003e\nIf this value already contains a single colon (e.g. \u003ci\u003ecustID:abc123\u003c/i\u003e), it is treated as a \u003ci\u003ekeyName:value\u003c/i\u003e secondary key pair and each side is URI-encoded separately.",
         "enablingConditions": [
           {
             "paramName": "eventType",
@@ -296,15 +438,16 @@ ___TEMPLATE_PARAMETERS___
       {
         "type": "CHECKBOX",
         "name": "useSecondaryIdentifier",
-        "checkboxText": "Use secondary identifier.",
+        "checkboxText": "Use secondary identifier",
         "simpleValueType": true,
-        "help": "",
+        "help": "By default the contact is addressed by its Primary Identifier. Enable this to address it by a secondary key instead (e.g. \u003ci\u003eemail\u003c/i\u003e).",
         "subParams": [
           {
             "type": "TEXT",
             "name": "secondaryKeyName",
             "displayName": "Secondary Key Name",
             "simpleValueType": true,
+            "help": "The secondary key name configured in your Cordial account (e.g. \u003ci\u003eemail\u003c/i\u003e or \u003ci\u003ecustID\u003c/i\u003e).",
             "enablingConditions": [
               {
                 "paramName": "useSecondaryIdentifier",
@@ -318,6 +461,7 @@ ___TEMPLATE_PARAMETERS___
             "name": "secondaryKeyValue",
             "displayName": "Secondary Key Value",
             "simpleValueType": true,
+            "help": "The value of the secondary key for this contact (e.g. the email address).",
             "enablingConditions": [
               {
                 "paramName": "useSecondaryIdentifier",
@@ -353,7 +497,7 @@ ___TEMPLATE_PARAMETERS___
             "type": "TEXT"
           }
         ],
-        "help": "For a full list of accepted parameters and their expected values check \u003ca href\u003d\"https://support.cordial.com/hc/en-us/articles/203885958-Contacts-API#postContacts\"\u003e the Contacts API documentation \u003c/a\u003e.\u003c/br\u003e Note that prior to using custom attributes they must be created in Cordial UI with the appropriate type (string, number, geo, etc), otherwise they might be dropped.",
+        "help": "For the full list of accepted parameters and their expected values, see the \u003ca href\u003d\"https://support.cordial.com/hc/en-us/articles/203885958-Contacts-API\"\u003eContacts API documentation\u003c/a\u003e.\u003cbr/\u003e\n\u003cb\u003esubscribeStatus\u003c/b\u003e and \u003cb\u003einvalid\u003c/b\u003e are automatically nested under the email channel; \u003cb\u003eforceSubscribe\u003c/b\u003e and \u003cb\u003esuppressTriggers\u003c/b\u003e are sent as top-level fields.\u003cbr/\u003e\n\u003cb\u003eidentifyBy\u003c/b\u003e (create only) takes a comma-separated list of secondary keys in priority order, e.g. \u003ci\u003eemail,custID\u003c/i\u003e.\u003cbr/\u003e\nCustom attributes must already exist in Cordial (with the matching type — string, number, geo, etc) before they can be set here, otherwise they may be dropped.",
         "enablingConditions": [
           {
             "paramName": "eventType",
@@ -412,6 +556,7 @@ ___TEMPLATE_PARAMETERS___
 
 ___SANDBOXED_JS_FOR_SERVER___
 
+const computeEffectiveTldPlusOne = require('computeEffectiveTldPlusOne');
 const encodeUriComponent = require('encodeUriComponent');
 const getAllEventData = require('getAllEventData');
 const getCookieValues = require('getCookieValues');
@@ -428,6 +573,7 @@ const Math = require('Math');
 const parseUrl = require('parseUrl');
 const sendHttpRequest = require('sendHttpRequest');
 const setCookie = require('setCookie');
+const toBase64 = require('toBase64');
 
 /*==============================================================================
 ==============================================================================*/
@@ -478,15 +624,7 @@ function getAttributionParam(paramName, cookieName, overrideValue) {
 
   const url = getUrl(eventData);
   const param = getQueryParam(url, paramName);
-  if (param) {
-    setCookie(cookieName, param, {
-      domain: 'auto',
-      path: '/',
-      secure: true,
-      'max-age': 60 * 60 * 24 // 24 hours
-    });
-    return param;
-  }
+  if (param) return param;
 
   const cookieValue = getCookieValues(cookieName)[0];
   if (cookieValue) return cookieValue;
@@ -494,41 +632,58 @@ function getAttributionParam(paramName, cookieName, overrideValue) {
   return undefined;
 }
 
+function setAttributionCookie(paramName, cookieName) {
+  const url = getUrl(eventData);
+  const param = getQueryParam(url, paramName);
+  if (!param) return;
+
+  setCookie(cookieName, param, {
+    domain: getCookieDomain(data, eventData),
+    path: '/',
+    secure: true,
+    httpOnly: !!data.cookieHttpOnly,
+    'max-age': 60 * 60 * 24 * (makeInteger(data.cookieExpiration) || 90)
+  });
+}
+
 function cacheAttributionIds() {
-  getAttributionParam('mcID', 'cordial_mcID');
-  getAttributionParam('linkID', 'cordial_linkID');
+  setAttributionCookie('mcID', 'cordial_mcID');
+  setAttributionCookie('linkID', 'cordial_linkID');
 }
 
 function createContact(eventData) {
+  const autoMap = data.autoMapEventData;
   const eventDataUserData = eventData.user_data || {};
   const email =
-    data.address || eventData.email || eventDataUserData.email || eventDataUserData.email_address;
+    data.address ||
+    (autoMap
+      ? eventData.email || eventDataUserData.email || eventDataUserData.email_address
+      : undefined);
 
-  if (!isValidValue(email)) {
-    log({
-      Name: 'Cordial',
-      Type: 'Message',
-      Message: '🛑 [ERROR] Contact was not created.',
-      Reason: 'Missing required parameter: "address".'
-    });
-    data.gtmOnFailure();
-    return true;
-  }
+  if (!requireValue(email, 'address', '🛑 [ERROR] Contact was not created.')) return true;
 
   const contactData = mapContactData();
-  contactData.channels = { email: { address: makeString(email) } };
+  contactData.channels = contactData.channels || {};
+  contactData.channels.email = contactData.channels.email || {};
+  contactData.channels.email.address = makeString(email);
 
   sendRequest('POST', 'contacts', contactData);
   return false;
 }
 
 function updateContact() {
-  const identifier = getContactIdentifier();
-  if (!identifier) {
-    data.gtmOnFailure();
+  if (data.useSecondaryIdentifier) {
+    if (
+      !requireValue(data.secondaryKeyName, 'secondaryKeyName', '🛑 [ERROR] Contact was not updated.') ||
+      !requireValue(data.secondaryKeyValue, 'secondaryKeyValue', '🛑 [ERROR] Contact was not updated.')
+    ) {
+      return true;
+    }
+  } else if (!requireValue(data.primaryKey, 'primaryKey', '🛑 [ERROR] Contact was not updated.')) {
     return true;
   }
 
+  const identifier = getContactIdentifier();
   const contactData = mapContactData();
 
   sendRequest('PUT', 'contacts/' + identifier, contactData);
@@ -537,28 +692,9 @@ function updateContact() {
 
 function getContactIdentifier() {
   if (data.useSecondaryIdentifier) {
-    if (!isValidValue(data.secondaryKeyName) || !isValidValue(data.secondaryKeyValue)) {
-      log({
-        Name: 'Cordial',
-        Type: 'Message',
-        Message: '🛑 [ERROR] Contact was not updated.',
-        Reason: 'Missing required parameters: "secondaryKeyName" and/or "secondaryKeyValue".'
-      });
-      return undefined;
-    }
     return (
       encodeUriComponent(data.secondaryKeyName) + ':' + encodeUriComponent(data.secondaryKeyValue)
     );
-  }
-
-  if (!isValidValue(data.primaryKey)) {
-    log({
-      Name: 'Cordial',
-      Type: 'Message',
-      Message: '🛑 [ERROR] Contact was not updated.',
-      Reason: 'Missing required parameter: "primaryKey".'
-    });
-    return undefined;
   }
 
   const parts = makeString(data.primaryKey).split(':');
@@ -571,16 +707,41 @@ function getContactIdentifier() {
 
 function mapContactData() {
   const contactData = {};
+  const emailChannel = {};
+
   if (data.createContactParameters && data.createContactParameters.length) {
     const fields = makeTableMap(data.createContactParameters, 'key', 'value');
     for (let key in fields) {
-      contactData[key] = coerceContactFieldValue(fields[key]);
+      if (key === 'subscribeStatus') {
+        emailChannel.subscribeStatus = fields[key];
+      } else if (key === 'invalid') {
+        emailChannel.invalid = coerceBooleanValue(fields[key]);
+      } else if (key === 'address') {
+        emailChannel.address = makeString(fields[key]);
+      } else if (key === 'identifyBy') {
+        if (data.eventType === 'createContact') {
+          contactData.identifyBy = fields[key]
+            .split(',')
+            .map((secondaryKey) => secondaryKey.trim())
+            .filter(isValidValue);
+        }
+      } else {
+        contactData[key] = coerceBooleanValue(fields[key]);
+      }
     }
   }
+
+  let hasEmailChannelFields = false;
+  for (let key in emailChannel) {
+    hasEmailChannelFields = true;
+    break;
+  }
+  if (hasEmailChannelFields) contactData.channels = { email: emailChannel };
+
   return contactData;
 }
 
-function coerceContactFieldValue(value) {
+function coerceBooleanValue(value) {
   if (value === 'true' || value === true) return true;
   if (value === 'false' || value === false) return false;
   return value;
@@ -589,25 +750,17 @@ function coerceContactFieldValue(value) {
 function trackOrder(eventData) {
   const mappedOrderData = mapOrderData(eventData);
 
-  if (!isValidValue(mappedOrderData.orderID)) {
-    log({
-      Name: 'Cordial',
-      Type: 'Message',
-      Message: '🛑 [ERROR] Order was not sent.',
-      Reason: 'Missing required parameter: "orderId".'
-    });
-    data.gtmOnFailure();
+  if (!requireValue(mappedOrderData.orderID, 'orderId', '🛑 [ERROR] Order was not sent.')) {
     return true;
   }
 
-  if (!isValidValue(mappedOrderData.email) && !isValidValue(mappedOrderData.cID)) {
-    log({
-      Name: 'Cordial',
-      Type: 'Message',
-      Message: '🛑 [ERROR] Order was not sent.',
-      Reason: 'Missing required identifier: "email" or "cID".'
-    });
-    data.gtmOnFailure();
+  if (
+    !requireOneOf(
+      [mappedOrderData.email, mappedOrderData.cID],
+      '"email" or "cID"',
+      '🛑 [ERROR] Order was not sent.'
+    )
+  ) {
     return true;
   }
 
@@ -616,56 +769,98 @@ function trackOrder(eventData) {
 }
 
 function mapOrderData(eventData) {
-  const orderId = data.orderId || eventData.transaction_id;
+  const autoMap = data.autoMapEventData;
+  const orderId = data.orderId || (autoMap ? eventData.transaction_id : undefined);
   const mcID = getAttributionParam('mcID', 'cordial_mcID', getMappedOrderProperty('mcId'));
   const linkID = getAttributionParam('linkID', 'cordial_linkID', getMappedOrderProperty('linkId'));
   const msID = getMappedOrderProperty('msId');
+  const eventDataUserData = eventData.user_data || {};
   const mappedData = {};
 
   if (orderId) mappedData.orderID = makeString(orderId);
 
-  if (data.purchaseDate) {
-    mappedData.purchaseDate = makeString(data.purchaseDate);
-  } else {
-    mappedData.purchaseDate = convertTimestampToISO(getTimestampMillis());
-  }
+  mappedData.purchaseDate = data.purchaseDate
+    ? makeString(data.purchaseDate)
+    : convertTimestampToISO(getTimestampMillis());
 
-  const eventDataUserData = eventData.user_data || {};
-  if (isValidValue(data.email)) mappedData.email = data.email;
-  else if (eventData.email) mappedData.email = eventData.email;
-  else if (eventDataUserData.email) mappedData.email = eventDataUserData.email;
-  else if (eventDataUserData.email_address) mappedData.email = eventDataUserData.email_address;
+  const email =
+    data.email ||
+    (autoMap
+      ? eventData.email || eventDataUserData.email || eventDataUserData.email_address
+      : undefined);
+  if (isValidValue(email)) mappedData.email = email;
 
   if (isValidValue(data.cid)) mappedData.cID = data.cid;
 
-  const customerID = getMappedOrderProperty('clientId');
+  const customerID = getMappedOrderProperty('clientId') || (autoMap ? eventData.user_id : undefined);
   if (customerID) mappedData.customerID = makeString(customerID);
-  else if (eventData.user_id) mappedData.customerID = makeString(eventData.user_id);
-  else if (eventData.client_id) mappedData.customerID = makeString(eventData.client_id);
 
   if (mcID) mappedData.mcID = makeString(mcID);
   if (linkID) mappedData.linkID = makeString(linkID);
   if (msID) mappedData.msID = makeString(msID);
 
-  const totalAmount = getMappedOrderProperty('totalAmount');
-  if (totalAmount) mappedData.totalAmount = makeNumber(totalAmount);
-  else if (eventData.value) mappedData.totalAmount = makeNumber(eventData.value);
+  const storeID = getMappedOrderProperty('storeId');
+  if (storeID) mappedData.storeID = makeString(storeID);
+
+  const status = getMappedOrderProperty('status');
+  if (status) mappedData.status = makeString(status);
+
+  const suppressTriggers = getMappedOrderProperty('suppressTriggers');
+  if (suppressTriggers) mappedData.suppressTriggers = coerceBooleanValue(suppressTriggers);
+
+  const discountAmount = getMappedOrderProperty('discountAmount');
+  if (discountAmount) {
+    mappedData.discountApplication = { type: 'fixed', amount: makeNumber(discountAmount) };
+  }
+
+  const totalAmount =
+    getMappedOrderProperty('totalAmount') || (autoMap ? eventData.value : undefined);
+  if (isValidValue(totalAmount)) mappedData.totalAmount = makeNumber(totalAmount);
 
   const tax = getMappedOrderProperty('tax');
   if (tax) mappedData.tax = makeNumber(tax);
 
-  const shippingCost = getMappedOrderProperty('shippingCost');
-  if (shippingCost) mappedData.shippingAndHandling = makeNumber(shippingCost);
-  else if (eventData.shipping) mappedData.shippingAndHandling = makeNumber(eventData.shipping);
+  const shippingCost =
+    getMappedOrderProperty('shippingCost') || (autoMap ? eventData.shipping : undefined);
+  if (isValidValue(shippingCost)) mappedData.shippingAndHandling = makeNumber(shippingCost);
+
+  const shippingAddress = mapAddress('shipping');
+  if (shippingAddress) mappedData.shippingAddress = shippingAddress;
+
+  const billingAddress = mapAddress('billing');
+  if (billingAddress) mappedData.billingAddress = billingAddress;
 
   if (data.orderCustomProperties && data.orderCustomProperties.length) {
-    const customProperties = makeTableMap(data.orderCustomProperties, 'key', 'value');
-    mappedData.properties = customProperties;
+    mappedData.properties = makeTableMap(data.orderCustomProperties, 'key', 'value');
   }
 
-  const items = getMappedOrderProperty('items') || eventData.items;
+  const items = getMappedOrderProperty('items') || (autoMap ? eventData.items : undefined);
   if (getType(items) === 'array') mappedData.items = formatItems(items);
   return mappedData;
+}
+
+function mapAddress(prefix) {
+  const suffixToField = {
+    Name: 'name',
+    AddressLine: 'address',
+    City: 'city',
+    State: 'state',
+    PostalCode: 'postalCode',
+    Country: 'country'
+  };
+
+  const address = {};
+  for (let suffix in suffixToField) {
+    const value = getMappedOrderProperty(prefix + suffix);
+    if (value) address[suffixToField[suffix]] = makeString(value);
+  }
+
+  let hasFields = false;
+  for (let key in address) {
+    hasFields = true;
+    break;
+  }
+  return hasFields ? address : undefined;
 }
 
 function formatItems(items) {
@@ -688,8 +883,18 @@ function formatItems(items) {
         formattedItem.qty = makeInteger(item[key]);
       } else if (key === 'itemPrice' || key === 'price') {
         formattedItem.itemPrice = makeNumber(item[key]);
+      } else if (key === 'salePrice') {
+        formattedItem.salePrice = makeNumber(item[key]);
       } else if (key === 'amount') {
         formattedItem.amount = makeNumber(item[key]);
+      } else if (key === 'productType') {
+        formattedItem.productType = makeString(item[key]);
+      } else if (key === 'manufacturerName') {
+        formattedItem.manufacturerName = makeString(item[key]);
+      } else if (key === 'UPCCode' || key === 'upc') {
+        formattedItem.UPCCode = makeString(item[key]);
+      } else if (key === 'inStock' || key === 'taxable' || key === 'enabled') {
+        formattedItem[key] = coerceBooleanValue(item[key]);
       } else if (key === 'description' || key === 'url' || key === 'images' || key === 'tags') {
         formattedItem[key] = item[key];
       } else {
@@ -697,11 +902,11 @@ function formatItems(items) {
       }
     }
 
-    if (!formattedItem.amount && formattedItem.qty && formattedItem.itemPrice) {
+    if (formattedItem.amount === undefined && formattedItem.qty && formattedItem.itemPrice) {
       formattedItem.amount = makeNumber(formattedItem.qty * formattedItem.itemPrice);
     }
 
-    if (!formattedItem.sku && formattedItem.productID) {
+    if (formattedItem.sku === undefined && formattedItem.productID) {
       formattedItem.sku = formattedItem.productID;
     }
 
@@ -724,31 +929,22 @@ function sendRequest(method, path, body) {
   return sendHttpRequest(
     url,
     (statusCode, headers, responseBody) => {
-      let parsedBody = {};
-      if (responseBody) parsedBody = JSON.parse(responseBody);
+      const parsedBody = JSON.parse(responseBody || '{}');
 
       if (!data.useOptimisticScenario) {
         if (statusCode >= 200 && statusCode < 400 && !parsedBody.errors) {
-          data.gtmOnSuccess();
+          return data.gtmOnSuccess();
         } else {
-          log({
-            Name: 'Cordial',
-            Type: 'Message',
-            Message: '🛑 [ERROR] API call failed.',
-            Status: statusCode,
-            Response: parsedBody
-          });
-          data.gtmOnFailure();
+          return data.gtmOnFailure();
         }
       }
     },
     {
       headers: {
-        Authorization: 'Basic ' + data.apiKey,
+        Authorization: 'Basic ' + toBase64(data.apiKey + ':'),
         'Content-Type': 'application/json'
       },
-      method: method,
-      timeout: 3500
+      method: method
     },
     JSON.stringify(body)
   );
@@ -834,9 +1030,36 @@ function convertTimestampToISO(timestamp) {
   );
 }
 
+function requireValue(value, paramName, failMessage) {
+  if (isValidValue(value)) return true;
+  log({
+    Name: 'Cordial',
+    Type: 'Message',
+    Message: failMessage,
+    Reason: 'Missing required parameter: "' + paramName + '".'
+  });
+  data.gtmOnFailure();
+  return false;
+}
+
+function requireOneOf(values, identifierDescription, failMessage) {
+  for (let i = 0; i < values.length; i++) {
+    if (isValidValue(values[i])) return true;
+  }
+  log({
+    Name: 'Cordial',
+    Type: 'Message',
+    Message: failMessage,
+    Reason: 'Missing required identifier: ' + identifierDescription + '.'
+  });
+  data.gtmOnFailure();
+  return false;
+}
+
 function isValidValue(value) {
   const valueType = getType(value);
-  return valueType !== 'null' && valueType !== 'undefined' && value !== '' && value === value;
+  if (valueType === 'null' || valueType === 'undefined' || value !== value) return false;
+  return value !== '' && value !== 'undefined' && value !== 'null';
 }
 
 function isConsentGivenOrNotRequired(data, eventData) {
@@ -848,6 +1071,12 @@ function isConsentGivenOrNotRequired(data, eventData) {
 
 function getUrl(eventData) {
   return eventData.page_location || getRequestHeader('referer') || eventData.page_referrer;
+}
+
+function getCookieDomain(data, eventData) {
+  return !data.cookieDomain || data.cookieDomain === 'auto'
+    ? computeEffectiveTldPlusOne(getUrl(eventData)) || 'auto'
+    : data.cookieDomain;
 }
 
 function shouldExitEarly(data, eventData) {
@@ -1256,12 +1485,53 @@ scenarios:
 
     runCode(mockData);
 
-    const expectedOptions = {domain: 'auto', path: '/', secure: true, 'max-age': 86400};
+    const expectedOptions = {domain: 'auto', path: '/', secure: true, httpOnly: false, 'max-age': 7776000};
     assertApi('setCookie').wasCalledWith('cordial_mcID', 'MC1', expectedOptions);
     assertApi('setCookie').wasCalledWith('cordial_linkID', 'LNK1', expectedOptions);
     assertApi('sendHttpRequest').wasNotCalled();
     assertApi('gtmOnSuccess').wasCalled();
     assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Page View] cookieDomain, cookieHttpOnly and cookieExpiration override the
+    cookie defaults'
+  code: |-
+    mockData.eventType = 'pageview';
+    mockData.cookieDomain = 'custom.example';
+    mockData.cookieHttpOnly = true;
+    mockData.cookieExpiration = 7;
+
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/landing?mcID=MC1&linkID=LNK1'
+    }));
+
+    runCode(mockData);
+
+    const expectedOptions = {
+      domain: 'custom.example',
+      path: '/',
+      secure: true,
+      httpOnly: true,
+      'max-age': 604800
+    };
+    assertApi('setCookie').wasCalledWith('cordial_mcID', 'MC1', expectedOptions);
+    assertApi('setCookie').wasCalledWith('cordial_linkID', 'LNK1', expectedOptions);
+- name: '[Page View] Falls back to the auto-detected top-level domain when cookieDomain
+    is left as auto'
+  code: |-
+    mockData.eventType = 'pageview';
+    mockData.cookieDomain = 'auto';
+
+    mock('getAllEventData', () => ({
+      page_location: 'https://sub.example.com/landing?mcID=MC1'
+    }));
+    mock('computeEffectiveTldPlusOne', () => 'example.com');
+
+    runCode(mockData);
+
+    assertApi('setCookie').wasCalledWith(
+      'cordial_mcID',
+      'MC1',
+      {domain: 'example.com', path: '/', secure: true, httpOnly: false, 'max-age': 7776000}
+    );
 - name: '[Page View] Does not rewrite cookies when attribution IDs are already cached
     and absent from the URL'
   code: |-
@@ -1281,6 +1551,53 @@ scenarios:
 
     assertApi('setCookie').wasNotCalled();
     assertApi('sendHttpRequest').wasNotCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Order] Resolves mcID and linkID from the URL but never writes a cookie'
+  code: |-
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout?mcID=MC1&linkID=LNK1'
+    }));
+    mock('getCookieValues', (name) => {
+      if (name === 'cordial_mcID') return ['CACHED_MC'];
+      if (name === 'cordial_linkID') return ['CACHED_LINK'];
+      return [];
+    });
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.mcID).isEqualTo('MC1');
+      assertThat(parsedBody.linkID).isEqualTo('LNK1');
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('setCookie').wasNotCalled();
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Order] Falls back to the cached cookie for mcID and linkID when absent from
+    the URL, still without writing a cookie'
+  code: |-
+    mock('getAllEventData', () => ({page_location: 'https://example.com/checkout'}));
+    mock('getCookieValues', (name) => {
+      if (name === 'cordial_mcID') return ['CACHED_MC'];
+      if (name === 'cordial_linkID') return ['CACHED_LINK'];
+      return [];
+    });
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.mcID).isEqualTo('CACHED_MC');
+      assertThat(parsedBody.linkID).isEqualTo('CACHED_LINK');
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('setCookie').wasNotCalled();
+    assertApi('sendHttpRequest').wasCalled();
     assertApi('gtmOnSuccess').wasCalled();
     assertApi('gtmOnFailure').wasNotCalled();
 - name: '[Order] Fails when orderId and Event Data transaction_id are both missing'
@@ -1379,7 +1696,8 @@ scenarios:
       mock('sendHttpRequest', (url, callback, options, body) => {
         assertThat(url).isEqualTo('https://api.cordial.io/v2/orders');
         assertThat(options.method).isEqualTo('POST');
-        assertThat(options.headers.Authorization).isEqualTo('Basic testApiKey123');
+        assertThat(options.headers.Authorization).isEqualTo(expectedAuthHeader);
+        assertThat(options.timeout).isUndefined();
         scenario.assert(JSON.parse(body));
         callback(200, {}, JSON.stringify({}));
       });
@@ -1390,6 +1708,157 @@ scenarios:
       assertApi('gtmOnSuccess').wasCalled();
       assertApi('gtmOnFailure').wasNotCalled();
     });
+- name: '[Order] customerID never falls back to eventData/client_id, only to eventData/user_id'
+  code: |-
+    mockData.orderProperties = [];
+
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout',
+      client_id: 'GA-CLIENT-ID'
+    }));
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.customerID).isUndefined();
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Order] Disabling Automap from Event Data makes orderId required since it
+    no longer falls back to transaction_id'
+  code: |-
+    mockData.autoMapEventData = false;
+    mockData.orderId = undefined;
+
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout',
+      transaction_id: 'TXN-99'
+    }));
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasNotCalled();
+    assertApi('gtmOnFailure').wasCalled();
+    assertApi('gtmOnSuccess').wasNotCalled();
+- name: '[Order] Disabling Automap from Event Data stops email, customerID, totalAmount,
+    shippingCost and items from falling back to Event Data'
+  code: |-
+    mockData.autoMapEventData = false;
+    mockData.email = undefined;
+    mockData.cid = 'CUST-1';
+    mockData.orderProperties = [];
+
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout',
+      email: 'fallback@example.com',
+      user_id: 'USER-99',
+      value: 250,
+      shipping: 12.5,
+      items: [{productID: 'SKU-1', sku: 'SKU-1', name: 'Widget', category: 'Gadgets'}]
+    }));
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.email).isUndefined();
+      assertThat(parsedBody.customerID).isUndefined();
+      assertThat(parsedBody.totalAmount).isUndefined();
+      assertThat(parsedBody.shippingAndHandling).isUndefined();
+      assertThat(parsedBody.items).isUndefined();
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Order] Maps msID, discountApplication, storeID, status, suppressTriggers
+    and shipping/billing addresses from Order Properties'
+  code: |-
+    mockData.orderProperties = [
+      {key: 'msId', value: 'MSG-1'},
+      {key: 'discountAmount', value: '10'},
+      {key: 'storeId', value: 'STORE-1'},
+      {key: 'status', value: 'processing'},
+      {key: 'suppressTriggers', value: 'true'},
+      {key: 'shippingName', value: 'Mark Smith'},
+      {key: 'shippingAddressLine', value: '123 Main St'},
+      {key: 'shippingCity', value: 'Los Angeles'},
+      {key: 'shippingState', value: 'CA'},
+      {key: 'shippingPostalCode', value: '90028'},
+      {key: 'shippingCountry', value: 'USA'},
+      {key: 'billingCity', value: 'San Diego'}
+    ];
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.msID).isEqualTo('MSG-1');
+      assertThat(parsedBody.discountApplication).isEqualTo({type: 'fixed', amount: 10});
+      assertThat(parsedBody.storeID).isEqualTo('STORE-1');
+      assertThat(parsedBody.status).isEqualTo('processing');
+      assertThat(parsedBody.suppressTriggers).isEqualTo(true);
+      assertThat(parsedBody.shippingAddress).isEqualTo({
+        name: 'Mark Smith',
+        address: '123 Main St',
+        city: 'Los Angeles',
+        state: 'CA',
+        postalCode: '90028',
+        country: 'USA'
+      });
+      assertThat(parsedBody.billingAddress).isEqualTo({city: 'San Diego'});
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Order] A totalAmount or shippingCost of exactly 0 is still sent, not dropped
+    as falsy'
+  code: |-
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout',
+      value: 0,
+      shipping: 0
+    }));
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.totalAmount).isEqualTo(0);
+      assertThat(parsedBody.shippingAndHandling).isEqualTo(0);
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Order] formatItems keeps an explicit amount of 0 and an empty sku instead
+    of recomputing them'
+  code: |-
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout',
+      items: [{productID: 'SKU-1', qty: 2, itemPrice: 5, amount: 0, sku: ''}]
+    }));
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.items[0].amount).isEqualTo(0);
+      assertThat(parsedBody.items[0].sku).isEqualTo('');
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
 - name: '[Order] formatItems maps GA4 items computes amount defaults sku and groups
     custom properties'
   code: |-
@@ -1456,6 +1925,53 @@ scenarios:
     assertApi('sendHttpRequest').wasCalled();
     assertApi('gtmOnSuccess').wasCalled();
     assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Order] formatItems maps Cordial-specific item fields (salePrice, productType,
+    manufacturerName, UPCCode, inStock, taxable, enabled)'
+  code: |-
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout',
+      items: [
+        {
+          productID: 'SKU-1',
+          sku: 'SKU-1',
+          name: 'Widget',
+          category: 'Gadgets',
+          salePrice: 8.99,
+          productType: 'physical',
+          manufacturerName: 'Acme Supplies',
+          UPCCode: '8 34460 00372 4',
+          inStock: 'true',
+          taxable: true,
+          enabled: 'false'
+        }
+      ]
+    }));
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.items).isEqualTo([
+        {
+          productID: 'SKU-1',
+          sku: 'SKU-1',
+          name: 'Widget',
+          category: 'Gadgets',
+          salePrice: 8.99,
+          productType: 'physical',
+          manufacturerName: 'Acme Supplies',
+          UPCCode: '8 34460 00372 4',
+          inStock: true,
+          taxable: true,
+          enabled: false
+        }
+      ]);
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
 - name: '[Order] Calls gtmOnFailure on a non-2xx response and on a 2xx response that
     contains errors'
   code: |-
@@ -1501,8 +2017,48 @@ scenarios:
     assertApi('sendHttpRequest').wasNotCalled();
     assertApi('gtmOnFailure').wasCalled();
     assertApi('gtmOnSuccess').wasNotCalled();
-- name: '[Create Contact] Builds a POST request with channels email address and coerced
-    contact fields'
+- name: '[Create Contact] Falls back to Event Data email when the Email Address field
+    is empty and Automap is enabled'
+  code: |-
+    mockData.eventType = 'createContact';
+    mockData.address = undefined;
+    mockData.autoMapEventData = true;
+
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout',
+      email: 'fallback@example.com'
+    }));
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody.channels.email.address).isEqualTo('fallback@example.com');
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Create Contact] Fails when the Email Address field is empty and Automap
+    is disabled, since it no longer falls back to Event Data'
+  code: |-
+    mockData.eventType = 'createContact';
+    mockData.address = undefined;
+    mockData.autoMapEventData = false;
+
+    mock('getAllEventData', () => ({
+      page_location: 'https://example.com/checkout',
+      email: 'fallback@example.com'
+    }));
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasNotCalled();
+    assertApi('gtmOnFailure').wasCalled();
+    assertApi('gtmOnSuccess').wasNotCalled();
+- name: '[Create Contact] Builds a POST request with channels/email nesting for subscribeStatus/invalid,
+    coerced contact fields and a parsed identifyBy list'
   code: |-
     mockData.eventType = 'createContact';
     mockData.address = 'newcontact@example.com';
@@ -1511,22 +2067,24 @@ scenarios:
       {key: 'invalid', value: 'false'},
       {key: 'forceSubscribe', value: 'true'},
       {key: 'suppressTriggers', value: 'true'},
-      {key: 'customAttr', value: 'customValue'}
+      {key: 'customAttr', value: 'customValue'},
+      {key: 'identifyBy', value: 'email, custID'}
     ];
 
     mock('sendHttpRequest', (url, callback, options, body) => {
       assertThat(url).isEqualTo('https://api.cordial.io/v2/contacts');
       assertThat(options.method).isEqualTo('POST');
-      assertThat(options.headers.Authorization).isEqualTo('Basic testApiKey123');
+      assertThat(options.headers.Authorization).isEqualTo(expectedAuthHeader);
 
       const parsedBody = JSON.parse(body);
       assertThat(parsedBody).isEqualTo({
-        subscribeStatus: 'subscribed',
-        invalid: false,
         forceSubscribe: true,
         suppressTriggers: true,
         customAttr: 'customValue',
-        channels: {email: {address: 'newcontact@example.com'}}
+        identifyBy: ['email', 'custID'],
+        channels: {
+          email: {subscribeStatus: 'subscribed', invalid: false, address: 'newcontact@example.com'}
+        }
       });
       callback(200, {}, JSON.stringify({}));
     });
@@ -1568,7 +2126,8 @@ scenarios:
     });
 
     assertApi('gtmOnSuccess').wasNotCalled();
-- name: '[Update Contact] Builds a PUT request addressed by the primary key'
+- name: '[Update Contact] Builds a PUT request addressed by the primary key, nesting
+    subscribeStatus under channels/email'
   code: |-
     mockData.eventType = 'updateContact';
     mockData.useSecondaryIdentifier = false;
@@ -1580,7 +2139,29 @@ scenarios:
       assertThat(options.method).isEqualTo('PUT');
 
       const parsedBody = JSON.parse(body);
-      assertThat(parsedBody).isEqualTo({subscribeStatus: 'subscribed'});
+      assertThat(parsedBody).isEqualTo({channels: {email: {subscribeStatus: 'subscribed'}}});
+      callback(200, {}, JSON.stringify({}));
+    });
+
+    runCode(mockData);
+
+    assertApi('sendHttpRequest').wasCalled();
+    assertApi('gtmOnSuccess').wasCalled();
+    assertApi('gtmOnFailure').wasNotCalled();
+- name: '[Update Contact] An address row updates the email via channels/email/address,
+    and identifyBy is dropped (create-only)'
+  code: |-
+    mockData.eventType = 'updateContact';
+    mockData.useSecondaryIdentifier = false;
+    mockData.primaryKey = 'contact-abc-123';
+    mockData.createContactParameters = [
+      {key: 'address', value: 'newemail@example.com'},
+      {key: 'identifyBy', value: 'email,custID'}
+    ];
+
+    mock('sendHttpRequest', (url, callback, options, body) => {
+      const parsedBody = JSON.parse(body);
+      assertThat(parsedBody).isEqualTo({channels: {email: {address: 'newemail@example.com'}}});
       callback(200, {}, JSON.stringify({}));
     });
 
@@ -1614,6 +2195,7 @@ scenarios:
 setup: |-
   const JSON = require('JSON');
   const Object = require('Object');
+  const toBase64 = require('toBase64');
 
   const assign = (target, source) => {
     if (!source) return target;
@@ -1628,6 +2210,7 @@ setup: |-
     eventType: 'order',
     apiKey: 'testApiKey123',
     useOptimisticScenario: false,
+    autoMapEventData: true,
     adStorageConsent: 'optional',
     orderId: 'ORDER-1',
     purchaseDate: undefined,
@@ -1653,14 +2236,23 @@ setup: |-
   cleanupMocks();
   mock('getRequestHeader', () => undefined);
   mock('getTimestampMillis', 1712000000000);
+  mock('computeEffectiveTldPlusOne', () => undefined);
   mock('sendHttpRequest', (url, callback, options, body) => {
     if (callback) callback(200, {}, JSON.stringify({}));
   });
 
   const mockData = createMockData({});
+  const expectedAuthHeader = 'Basic ' + toBase64('testApiKey123:');
 
 
 ___NOTES___
+
+2026-09-14 - Change Notes:
+  - Fix Basic Auth: the API key was sent unencoded instead of base64-encoded, breaking every API call
+  - Fix Contacts payload nesting (subscribeStatus/invalid/address under channels.email); add create-only identifyBy support
+  - Add full Orders API field coverage (discount, store ID, status, suppressTriggers, addresses, more item fields); fix numeric/sku fields being dropped when 0 or empty
+  - Add Cookie Settings overrides (domain/HttpOnly/expiration, 90-day default) and an Automap from Event Data checkbox; drop the client_id fallback for customerID; only Page View writes the mcID/linkID cookies now, Order only reads them
+  - Rename the tag to "Cordial", rewrite description/help texts/README (incl. API key IP allowlist warning), and expand test coverage
 
 2026-08-27 - Change Notes:
   - Implement Create Contact and Update Contact, sending requests to Cordial's Contacts API (POST to create, PUT by primary key or by a URI-encoded secondary identifier to update)
@@ -1672,5 +2264,4 @@ ___NOTES___
   - Add unit test coverage for consent/preview early exits, Page View caching, and all Order/Create Contact/Update Contact code paths
 
 Created on 04/08/2026, 13:02:58
-
 
