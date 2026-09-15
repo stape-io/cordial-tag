@@ -95,3 +95,6 @@ Custom attributes must already exist in Cordial (with the matching type — stri
 ## Open Source
 
 Cordial tag for GTM Server Side is developed and maintained by [Stape Team](https://stape.io/) under the Apache 2.0 license.
+
+### GTM Gallery Status
+🔴 Not listed
