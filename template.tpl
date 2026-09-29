@@ -215,7 +215,14 @@ ___TEMPLATE_PARAMETERS___
         "simpleValueType": true,
         "valueValidators": [
           {
-            "type": "NON_EMPTY"
+            "type": "NON_EMPTY",
+            "enablingConditions": [
+              {
+                "paramName": "autoMapEventData",
+                "paramValue": true,
+                "type": "NOT_EQUALS"
+              }
+            ]
           }
         ],
         "help": "Required. The unique identifier for the order.\u003cbr/\u003e\u003cbr/\u003eFalls back to \u003ci\u003eeventData.transaction_id\u003c/i\u003e when left empty and \u003ci\u003eAutomap from Event Data\u003c/i\u003e is enabled."
@@ -232,7 +239,7 @@ ___TEMPLATE_PARAMETERS___
         "name": "cid",
         "displayName": "Cordial User ID",
         "simpleValueType": true,
-        "help": "Unique primary identifier for the user (as is registered in your Cordial contacts list). This must be set if \u003ci\u003eemail\u003c/i\u003e is not set.",
+        "help": "Unique primary identifier for the user (as is registered in your Cordial contacts list). This must be set if \u003ci\u003eUser email\u003c/i\u003e is not set.",
         "valueValidators": []
       },
       {
@@ -351,6 +358,11 @@ ___TEMPLATE_PARAMETERS___
                 "value": "billingCountry",
                 "displayValue": "Billing Address: Country"
               }
+            ],
+            "valueValidators": [
+              {
+                "type": "NON_EMPTY"
+              }
             ]
           },
           {
@@ -377,13 +389,24 @@ ___TEMPLATE_PARAMETERS___
             "defaultValue": "",
             "displayName": "Property",
             "name": "key",
-            "type": "TEXT"
+            "type": "TEXT",
+            "isUnique": true,
+            "valueValidators": [
+              {
+                "type": "NON_EMPTY"
+              }
+            ]
           },
           {
             "defaultValue": "",
             "displayName": "Value",
             "name": "value",
-            "type": "TEXT"
+            "type": "TEXT",
+            "valueValidators": [
+              {
+                "type": "NON_EMPTY"
+              }
+            ]
           }
         ],
         "help": "Optional key/value pairs describing additional properties of the order.",
@@ -409,7 +432,14 @@ ___TEMPLATE_PARAMETERS___
         "simpleValueType": true,
         "valueValidators": [
           {
-            "type": "NON_EMPTY"
+            "type": "NON_EMPTY",
+            "enablingConditions": [
+              {
+                "paramName": "autoMapEventData",
+                "paramValue": true,
+                "type": "NOT_EQUALS"
+              }
+            ]
           }
         ],
         "help": "Required for creating a contact.\u003cbr/\u003e\u003cbr/\u003eFalls back to \u003ci\u003eeventData.email\u003c/i\u003e, then \u003ci\u003eeventData.user_data.email\u003c/i\u003e, then \u003ci\u003eeventData.user_data.email_address\u003c/i\u003e, when left empty and \u003ci\u003eAutomap from Event Data\u003c/i\u003e is enabled.",
@@ -433,6 +463,18 @@ ___TEMPLATE_PARAMETERS___
             "paramValue": "updateContact",
             "type": "EQUALS"
           }
+        ],
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY",
+            "enablingConditions": [
+              {
+                "paramName": "useSecondaryIdentifier",
+                "paramValue": true,
+                "type": "NOT_EQUALS"
+              }
+            ]
+          }
         ]
       },
       {
@@ -454,6 +496,11 @@ ___TEMPLATE_PARAMETERS___
                 "paramValue": true,
                 "type": "EQUALS"
               }
+            ],
+            "valueValidators": [
+              {
+                "type": "NON_EMPTY"
+              }
             ]
           },
           {
@@ -467,6 +514,11 @@ ___TEMPLATE_PARAMETERS___
                 "paramName": "useSecondaryIdentifier",
                 "paramValue": true,
                 "type": "EQUALS"
+              }
+            ],
+            "valueValidators": [
+              {
+                "type": "NON_EMPTY"
               }
             ]
           }
@@ -488,13 +540,24 @@ ___TEMPLATE_PARAMETERS___
             "defaultValue": "",
             "displayName": "Parameters",
             "name": "key",
-            "type": "TEXT"
+            "type": "TEXT",
+            "isUnique": true,
+            "valueValidators": [
+              {
+                "type": "NON_EMPTY"
+              }
+            ]
           },
           {
             "defaultValue": "",
             "displayName": "Value",
             "name": "value",
-            "type": "TEXT"
+            "type": "TEXT",
+            "valueValidators": [
+              {
+                "type": "NON_EMPTY"
+              }
+            ]
           }
         ],
         "help": "For the full list of accepted parameters and their expected values, see the \u003ca href\u003d\"https://support.cordial.com/hc/en-us/articles/203885958-Contacts-API\"\u003eContacts API documentation\u003c/a\u003e.\u003cbr/\u003e\n\u003cb\u003esubscribeStatus\u003c/b\u003e and \u003cb\u003einvalid\u003c/b\u003e are automatically nested under the email channel; \u003cb\u003eforceSubscribe\u003c/b\u003e and \u003cb\u003esuppressTriggers\u003c/b\u003e are sent as top-level fields.\u003cbr/\u003e\n\u003cb\u003eidentifyBy\u003c/b\u003e (create only) takes a comma-separated list of secondary keys in priority order, e.g. \u003ci\u003eemail,custID\u003c/i\u003e.\u003cbr/\u003e\nCustom attributes must already exist in Cordial (with the matching type — string, number, geo, etc) before they can be set here, otherwise they may be dropped.",
@@ -2246,6 +2309,12 @@ setup: |-
 
 
 ___NOTES___
+
+2026-09-29 - Change Notes:
+  - Make Order ID and Email Address required in the UI only when Automap from Event Data is off, since with it on they fall back to event data
+  - Require Primary Identifier for Update Contact unless "Use secondary identifier" is checked, so secondary-identifier users aren't forced to enter a value the tag ignores
+  - Require Property/Value in the Order Properties, Custom Properties and Contact Fields tables (and a unique key for the latter two), and require the secondary key name/value, so incomplete rows are caught before publishing
+  - Fix the Cordial User ID help text to refer to the "User email" field by its label
 
 2026-09-14 - Change Notes:
   - Fix Basic Auth: the API key was sent unencoded instead of base64-encoded, breaking every API call
